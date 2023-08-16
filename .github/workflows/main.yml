@@ -1,0 +1,22 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Login to Docker Hub
+      run: echo "${{ fla33914! }}" | docker login -u "${{ grosario1124 }}" --password-stdin
+
+    - name: Build and Push Docker Image
+      run: |
+        docker build -t grosario1124/image-classifier .
+        docker push grosario1124/image-classifier

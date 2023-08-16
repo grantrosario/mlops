@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-classifier-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: image-classifier
+  template:
+    metadata:
+      labels:
+        app: image-classifier
+    spec:
+      containers:
+      - name: image-classifier-container
+        image: grosario1124/image-classifier:latest
+        ports:
+        - containerPort: 8501 # Streamlit's default port

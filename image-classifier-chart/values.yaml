@@ -1,0 +1,10 @@
+replicaCount: 2
+
+image:
+  repository: grosario1124/image-classifier
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
